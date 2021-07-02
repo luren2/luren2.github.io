@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="亲爱的路人">
 <meta property="og:description" content="本程序题目链接  题目描述：  正整数 A 的“DA（为 1 位整数）部分”定义为由 A 中所有 DA 组成的新整数 PA。例如：给定 A=3862767，DA=6，则">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-04-28T14:05:24.729Z">
+<meta property="og:updated_time" content="2021-07-02T14:41:28.474Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PAT(乙级)-1016(部分A+B)">
 <meta name="twitter:description" content="本程序题目链接  题目描述：  正整数 A 的“DA（为 1 位整数）部分”定义为由 A 中所有 DA 组成的新整数 PA。例如：给定 A=3862767，DA=6，则">
@@ -197,7 +197,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">371字</span>
+        <span class="post-count">253字</span>
       </span>
     </span>
 
@@ -235,7 +235,7 @@
 <h3 id="输入样例-2："><a href="#输入样例-2：" class="headerlink" title="输入样例 2："></a>输入样例 2：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3862767 1 13530293 8</span><br></pre></td></tr></table></figure>
 <h3 id="输出样例-2："><a href="#输出样例-2：" class="headerlink" title="输出样例 2："></a>输出样例 2：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0</span><br></pre></td></tr></table></figure>
 <p><strong>代码如下：</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> A[<span class="number">1010</span>];  <span class="comment">//将A存入字符数组</span></span><br><span class="line">    <span class="keyword">int</span> B,Q,R;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%s%d"</span>,A,&amp;B);</span><br><span class="line">    <span class="keyword">int</span> len=<span class="built_in">strlen</span>(A);</span><br><span class="line">    Q=(A[<span class="number">0</span>]-<span class="string">'0'</span>)/B;  <span class="comment">//求出首位除以B的商</span></span><br><span class="line">    R=(A[<span class="number">0</span>]-<span class="string">'0'</span>)%B;  <span class="comment">//求出首位除以B的余数</span></span><br><span class="line"><span class="comment">//判断A的位数，如果是一位数则直接输出首位的商，如果不是一位数并且商不为0，说明首位比B大，则输出首位的商</span></span><br><span class="line"><span class="comment">//如果商为0，说明首位比B大，则商的位数就比A小一位，所以下面i从1开始遍历</span></span><br><span class="line">    <span class="keyword">if</span>(len==<span class="number">1</span>||(len&gt;<span class="number">1</span>&amp;&amp;Q!=<span class="number">0</span>)) <span class="built_in">printf</span>(<span class="string">"%d"</span>,Q);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;len;i++)  <span class="comment">//依次往后求商和余数</span></span><br><span class="line">    &#123;</span><br><span class="line">        Q=(R*<span class="number">10</span>+(A[i]-<span class="string">'0'</span>))/B;</span><br><span class="line">        R=(R*<span class="number">10</span>+(A[i]-<span class="string">'0'</span>))%B;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d"</span>,Q);        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">" %d"</span>,R);  <span class="comment">//输出最后的余数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m,n,num1,num2;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d%d%d"</span>,&amp;num1,&amp;m,&amp;num2,&amp;n);</span><br><span class="line">    <span class="keyword">int</span> sum1=<span class="number">0</span>,sum2=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(num1!=<span class="number">0</span>)  <span class="comment">//求出num1的每一位数与m比对</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(num1%<span class="number">10</span>==m) sum1=sum1*<span class="number">10</span>+m;</span><br><span class="line">        num1=num1/<span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">     <span class="keyword">while</span>(num2!=<span class="number">0</span>)    <span class="comment">//求出num2的每一位数与n比对</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(num2%<span class="number">10</span>==n) sum2=sum2*<span class="number">10</span>+n;</span><br><span class="line">        num2=num2/<span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,sum1+sum2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -281,7 +281,7 @@
     2021-04-28
     <br>
     <strong class="update-time">最后更新：</strong>
-    2021-04-28
+    2021-07-02
     <br>
     <strong class="article-titles">本文标题：</strong>
     <a href="https://luren2.github.io/293f322a.html" title="PAT(乙级)-1016(部分A+B)" target="_blank">PAT(乙级)-1016(部分A+B)</a>
@@ -631,11 +631,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color3">C++ PAT</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">C++ PAT</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
